@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IRIS Dataset Form</title>
+  <style>
+    .form-container {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .form-container input {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-container button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<h1> IRIS Dataset Predictor: Petal Lenght -> Petal Width <h1>
+  <div class="form-container">
+    <form action="{{ url_for('predict') }}" method="POST">
+      <input type="numeric" id="petalLength" name="petalLength" placeholder="Petal Length" required>
+      <button type="submit">Predict!</button>
+    </form>
+<br>
+   <br>
+   {{ prediction_text }}
+  </div>
+</body>
+</html>
